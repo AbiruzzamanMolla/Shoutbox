@@ -27,7 +27,9 @@ body {
 }
 
 .headsection h2,
-.footsection h2 {}
+.footsection h2 {
+    font-size: 40px;
+}
 
 .content {
     border: 15px solid #ddd;
