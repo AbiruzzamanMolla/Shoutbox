@@ -11,7 +11,7 @@ body {
 }
 
 .wrapper {
-    width: 100%;
+    width: 700px;
     margin: 0 auto;
 }
 
@@ -33,15 +33,15 @@ body {
 
 .content {
     border: 15px solid #ddd;
-    min-height: 80%;
+    min-height: 500px;
 }
 
 .box {
     border: 5px solid #999;
     margin: 30px auto 0;
     padding: 20px;
-    width: 85%;
-    height: 60%;
+    width: 600px;
+    height: 200px;
     overflow: scroll;
 }
 

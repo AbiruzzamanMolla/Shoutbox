@@ -1,3 +1,7 @@
+<?php
+include_once "./classes/Shout.php";
+$shout = new Shout();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -20,17 +24,14 @@
         <section class="content clr">
             <div class="box">
                 <ul>
-                    <li><span>05: 30 pm</span> - <b>Abir</b> Hello, I am new here!</li>
-                    <li><span>05: 30 pm</span> - <b>Abir</b> Hello, I am new here!</li>
-                    <li><span>05: 30 pm</span> - <b>Abir</b> Hello, I am new here!</li>
-                    <li><span>05: 30 pm</span> - <b>Abir</b> Hello, I am new here!</li>
-                    <li><span>05: 30 pm</span> - <b>Abir</b> Hello, I am new here!</li>
-                    <li><span>05: 30 pm</span> - <b>Abir</b> Hello, I am new here!</li>
-                    <li><span>05: 30 pm</span> - <b>Abir</b> Hello, I am new here!</li>
-                    <li><span>05: 30 pm</span> - <b>Abir</b> Hello, I am new here!</li>
-                    <li><span>05: 30 pm</span> - <b>Abir</b> Hello, I am new here!</li>
-                    <li><span>05: 30 pm</span> - <b>Abir</b> Hello, I am new here!</li>
-                    <li><span>05: 30 pm</span> - <b>Abir</b> Hello, I am new here!</li>
+                <?php
+                $getData = $shout->getAllData();
+                if($getData){
+                    while($data = $getData->fetch_assoc()){ ?>
+                        <li><span><?php echo $data['time_col'] ?></span> - <b><?php echo $data['name_col'] ?></b> <?php echo $data['message_col'] ?></li>
+                <?php }
+                }
+                ?>
                 </ul>
             </div>
             <div class="shoutform clr">
@@ -60,5 +61,4 @@
         </footer>
     </div>
 </body>
-
 </html>
