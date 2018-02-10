@@ -35,7 +35,12 @@ $shout = new Shout();
                 </ul>
             </div>
             <div class="shoutform clr">
-                <form action="">
+            <?php
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                $shoutdata = $shout->insertData($_POST);
+            }
+            ?>
+                <form action="" method="post">
                     <table>
                         <tr>
                             <td>Name</td>
